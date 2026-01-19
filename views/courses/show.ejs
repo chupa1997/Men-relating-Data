@@ -7,3 +7,12 @@
   <input name="comment" placeholder="Comment" />
   <button>Add Review</button>
 </form>
+
+<h2>Reviews</h2>
+<% course.reviews.forEach(r => { %>
+  <p><strong><%= r.studentName %></strong>: <%= r.comment %></p>   
+<% }) %>    
+<a href="/courses">Back to Courses</a>
+<form action="/courses/delete/<%= course._id %>" method="POST" style="margin-top:20px;">
+  <button>Delete Course</button>
+</form>

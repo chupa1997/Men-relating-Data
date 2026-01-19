@@ -3,3 +3,9 @@
   <p>Instructor: <%= course.instructor?.name %></p>
   <a href="/courses/<%= course._id %>">View</a>
 <% }) %>
+<a href="/courses/new">Add New Course</a>   
+<form action="/courses/search" method="GET">
+  <input name="title" placeholder="Search by Title" />
+  <button>Search</button>
+</form>
+
