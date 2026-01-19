@@ -1,0 +1,5 @@
+<% courses.forEach(course => { %>
+  <h3><%= course.title %></h3>
+  <p>Instructor: <%= course.instructor?.name %></p>
+  <a href="/courses/<%= course._id %>">View</a>
+<% }) %>

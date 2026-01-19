@@ -1,0 +1,9 @@
+<h1><%= course.title %></h1>
+<p><%= course.description %></p>
+
+<form action="/courses/<%= course._id %>/reviews" method="POST">
+  <input name="studentName" placeholder="Student Name" />
+  <input name="rating" type="number" min="1" max="5" />
+  <input name="comment" placeholder="Comment" />
+  <button>Add Review</button>
+</form>
