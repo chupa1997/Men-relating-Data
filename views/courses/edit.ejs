@@ -1,0 +1,20 @@
+<h1>Edit Course</h1>
+
+<form action="/courses/update/<%= course._id %>" method="POST">
+  <input name="title" value="<%= course.title %>" required />
+  <input name="description" value="<%= course.description %>" />
+  <input name="price" value="<%= course.price %>" />
+
+  <select name="instructor">
+    <% instructors.forEach(i => { %>
+      <option 
+        value="<%= i._id %>"
+        <%= course.instructor?.toString() === i._id.toString() ? 'selected' : '' %>>
+        <%= i.name %>
+      </option>
+    <% }) %>
+  </select>
+
+  <button>Update Course</button>
+</form>
+<a href="/courses/<%= course._id %>">Back to Course Details</a>

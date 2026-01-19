@@ -1,0 +1,9 @@
+<h1>Edit Instructor</h1>
+
+<form action="/instructors/update/<%= instructor._id %>" method="POST">
+  <input name="name" value="<%= instructor.name %>" required />
+  <input name="email" value="<%= instructor.email %>" required />
+  <input name="yearsOfExperience" value="<%= instructor.yearsOfExperience %>" />
+  <button>Update</button>
+</form>
+<a href="/instructors/<%= instructor._id %>">Back to Instructor Details</a> 

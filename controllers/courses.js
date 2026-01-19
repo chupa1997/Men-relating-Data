@@ -15,6 +15,14 @@ router.get('/', async (req, res) => {
     res.render('courses/index', { courses })
 })
 
+// edit form
+router.get('/:id/edit', async (req, res) => {
+    const course = await Course.findById(req.params.id)
+    const instructors = await Instructor.find()
+    res.render('courses/edit', { course, instructors })
+})
+
+
 // show 1 course 
 router.get('/:id', async (req, res) => {
     const course = await Course.findById(req.params.id).populate('instructor')

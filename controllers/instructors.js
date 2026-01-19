@@ -19,10 +19,22 @@ router.get('/', async (req, res) => {
     res.render('instructors/index', { instructors })
 })
 
+
+// edit form
+router.get('/:id/edit', async (req, res) => {
+    const instructor = await Instructor.findById(req.params.id)
+    res.render('instructors/edit', { instructor })
+})
+
+
 // show instructor
 router.get('/:id', async (req, res) => {
     const instructor = await Instructor.findById(req.params.id)
     res.render('instructors/show', { instructor })
 })
 
+router.post('/update/:id', async (req, res) => {
+    await Instructor.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect(`/instructors/${req.params.id}`)
+})
 module.exports = router
